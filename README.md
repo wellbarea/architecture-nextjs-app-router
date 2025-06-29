@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Meu Projeto Next.js
 
-## Getting Started
+Este é um projeto [Next.js](https://nextjs.org) inicializado com [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-First, run the development server:
+## Primeiros Passos
+
+Primeiro, instale as dependências:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    yarn install
+# ou
+    npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Depois, execute o servidor de desenvolvimento:
+```bash
+    npm run dev
+# ou
+    yarn dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para rodar os testes unitários, execute:
+```bash
+npm run test
+# ou
+yarn test
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Estamos utilizando Jest e Testing Library para os testes.
 
-## Learn More
+Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+src/
+    app/
+        # Inicializa as páginas da aplicação com layouts personalizados e chama as telas dos módulos construídos abaixo.
+    components/
+        # Componentes globais utilizados por um ou mais módulos.
+    configs/
+        # Configurações globais do projeto.
+        axios/
+            # Configuração base do Axios com o endpoint definido uma única vez.
+        providers/
+            # Providers utilizados nos contextos necessários.
+        react-query/
+            # Configuração do React Query para melhor desempenho.
+        styles/
+            # Configurações globais e customizações de bibliotecas externas.
+    constants/
+        # Definição de todas as constantes utilizadas no projeto.
+    entities/
+        # Definição de todas as interfaces/models dos módulos.
+    modules/
+        # Módulos de acordo com a necessidade do projeto.
+        components/
+            # Componentes específicos de cada módulo.
+        hooks/
+            # Hooks intermediários para chamadas de APIs e lógicas necessárias.
+        helpers/
+            # Validações e outros helpers necessários.
+        index.tsx
+            # Integração de todos os componentes do módulo.
+    services/
+        # Criação dos services com endpoints e hooks para utilização nos módulos necessários.
+    utils/
+        # Métodos auxiliares para toda a aplicação, como formatação, entre outros.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.

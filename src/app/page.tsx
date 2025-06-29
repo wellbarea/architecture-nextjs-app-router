@@ -1,5 +1,3 @@
-export default function Home() {
-  return (
-    <h1> Home page </h1>
-  );
-}
+import Screen from '@/src/modules/offers/index';
+
+export default Screen;
